@@ -53,11 +53,11 @@
 .step {
   color: hsl(231, 11%, 63%);
   font-weight: 400px;
-  font-size: 10px;
+  font-size: 8px;
 }
 
 .step-subtext {
   color: white;
   font-weight: 700px;
-  font-size: 13px;
+  font-size: 10px;
 }
