@@ -9,12 +9,13 @@ function App() {
 
   return (
     <div className="App">
-      <div className="left-side">
+      <container className="form"> <div className="left-side">
         <FormNav />
       </div>
-      <div className="right-side">
-        <Form />
-      </div>
+        <div className="right-side">
+          <Form />
+        </div></container>
+
     </div>
   )
 }

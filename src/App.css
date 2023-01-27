@@ -1,3 +1,63 @@
 * {
   font-family: 'Ubuntu', sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+#root {
+  background-color: aliceblue;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+.form {
+  display: flex;
+  background-color: white;
+  margin: 20px;
+  border-radius: 5px;
+  height: 500px;
+}
+
+.left-side {
+  width: 30%;
+  background-color: hsl(243, 100%, 62%);
+}
+
+.right-side {
+  width: 70%
+}
+
+/* FORM NAVIGATION COMPONENT */
+
+.step-section {
+  display: flex;
+  margin: 20px;
+}
+
+.form-circle {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background-color: hsl(228, 100%, 84%);
+  display: inline-block;
+  /* height: 100%; */
+  line-height: 1.25;
+  padding: 0;
+  text-align: center;
+}
+
+.step-text {
+  margin: 0px 0px 0px 10px;
+}
+
+.step {
+  color: hsl(231, 11%, 63%);
+  font-weight: 400px;
+  font-size: 10px;
+}
+
+.step-subtext {
+  color: white;
+  font-weight: 700px;
+  font-size: 13px;
 }
