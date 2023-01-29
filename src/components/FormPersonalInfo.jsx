@@ -1,19 +1,9 @@
 import { useState } from "react"
 
-export default function FormPersonalInfo({ handleNext }) {
-    const [name, setName] = useState("")
-    const [email, setEmail] = useState("")
-    const [phone, setPhone] = useState("")
+export default function FormPersonalInfo({ name, email, phone, handleName, handleEmail, handlePhone, handleNext }) {
 
-    function handleName(event) {
-        setName(event.target.value)
-    }
-    function handleEmail(event) {
-        setEmail(event.target.value)
-    }
-    function handlePhone(event) {
-        setPhone(event.target.value)
-    }
+
+
     function handleSubmit(event) {
         event.preventDefault();
         handleNext();
