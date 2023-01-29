@@ -8,9 +8,11 @@ function App() {
   const [step, setStep] = useState(1)
   function handleNext() {
     setStep(prev => prev += 1)
+    console.log("Next Submitted")
   }
   function handleBack() {
     setStep(prev => prev -= 1)
+    console.log("Back Submitted")
   }
 
   return (

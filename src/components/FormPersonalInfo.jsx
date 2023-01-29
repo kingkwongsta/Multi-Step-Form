@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function FormPersonalInfo() {
+export default function FormPersonalInfo({ handleNext }) {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [phone, setPhone] = useState("")
@@ -16,6 +16,7 @@ export default function FormPersonalInfo() {
     }
     function handleSubmit(event) {
         event.preventDefault();
+        handleNext();
         console.log(name, email, phone)
     }
 
@@ -32,7 +33,7 @@ export default function FormPersonalInfo() {
                     <p className="form-personal-form-text">Phone Number</p>
                     <input type="tel" value={phone} onChange={handlePhone} className="form-personal-input" />
                     <div>
-                        <button className="form-personal-submit">Next Step</button>
+                        <button className="form-personal-next">Next Step</button>
                     </div>
                 </form>
             </div>
