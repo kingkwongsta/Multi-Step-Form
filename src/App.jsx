@@ -5,7 +5,13 @@ import FormNav from './components/FormNav'
 import Form from './components/Form'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [step, setStep] = useState(1)
+  function handleNext() {
+    setStep(prev => prev += 1)
+  }
+  function handleBack() {
+    setStep(prev => prev -= 1)
+  }
 
   return (
     <div className="App">
@@ -14,7 +20,7 @@ function App() {
           <FormNav />
         </div>
         <div className="right-side">
-          <Form />
+          <Form step={step} handleNext={handleNext} handleBack={handleBack} />
         </div>
       </div>
     </div>

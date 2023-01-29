@@ -21,6 +21,7 @@ export default function FormPlan() {
             <div className="plan-card-section">
                 {renderPlans()}
             </div>
+            <button className="form-personal-submit">Next Step</button>
         </div>
     )
 }
