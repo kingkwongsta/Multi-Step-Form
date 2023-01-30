@@ -1,21 +1,14 @@
 import { useState } from "react"
+import Button from '@mui/material/Button';
 
-export default function FormPersonalInfo() {
-    const [name, setName] = useState("")
-    const [email, setEmail] = useState("")
-    const [phone, setPhone] = useState("")
 
-    function handleName(event) {
-        setName(event.target.value)
-    }
-    function handleEmail(event) {
-        setEmail(event.target.value)
-    }
-    function handlePhone(event) {
-        setPhone(event.target.value)
-    }
+export default function FormPersonalInfo({ name, email, phone, handleName, handleEmail, handlePhone, handleNext }) {
+
+
+
     function handleSubmit(event) {
         event.preventDefault();
+        handleNext();
         console.log(name, email, phone)
     }
 
@@ -32,7 +25,7 @@ export default function FormPersonalInfo() {
                     <p className="form-personal-form-text">Phone Number</p>
                     <input type="tel" value={phone} onChange={handlePhone} className="form-personal-input" />
                     <div>
-                        <button className="form-personal-submit">Next Step</button>
+                        <Button onClick={handleSubmit} className="form-personal-next">Next Step</Button>
                     </div>
                 </form>
             </div>
