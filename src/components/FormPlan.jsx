@@ -1,6 +1,9 @@
 import { useState } from "react";
 import plan_icon from "../assets/icon-arcade.svg"
 import PlanCard from "./PlanCard"
+import Button from '@mui/material/Button';
+import Switch from '@mui/material/Switch';
+
 
 export default function FormPlan({ handleNext, handleBack }) {
     const [plan, setPlan] = useState("")
@@ -21,8 +24,12 @@ export default function FormPlan({ handleNext, handleBack }) {
             <div className="plan-card-section">
                 {renderPlans()}
             </div>
-            <button className="form-personal-back" onClick={handleBack}>Go Back</button>
-            <button className="form-personal-next" onClick={handleNext}>Next Step</button>
+            <div>
+                <span>Monthly</span><Switch /><span>Yearly</span>
+            </div>
+
+            <Button className="form-personal-back" onClick={handleBack}>Go Back</Button>
+            <Button className="form-personal-next" onClick={handleNext}>Next Step</Button>
         </div>
     )
 }
