@@ -1,6 +1,8 @@
 import { useState } from "react";
 import FormPersonalInfo from "./FormPersonalInfo"
 import FormPlan from "./FormPlan"
+import Button from '@mui/material/Button';
+
 
 export default function Form({ step, handleNext, handleBack }) {
     //****  PERSONAL INFORMATION SECTION
@@ -22,6 +24,8 @@ export default function Form({ step, handleNext, handleBack }) {
         <>
             {step === 1 && <FormPersonalInfo name={name} email={email} phone={phone} handleNext={handleNext} handleName={handleName} handleEmail={handleEmail} handlePhone={handlePhone} />}
             {step === 2 && <FormPlan handleNext={handleNext} handleBack={handleBack} />}
+            {step >= 2 && <Button className="form-back" onClick={handleBack}>Go Back</Button>}
+            <Button className="form-next" onClick={handleNext}>Next Step</Button>
         </>
     )
 }

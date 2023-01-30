@@ -24,9 +24,6 @@ export default function FormPersonalInfo({ name, email, phone, handleName, handl
                     <input type="email" value={email} onChange={handleEmail} className="form-personal-input" />
                     <p className="form-personal-form-text">Phone Number</p>
                     <input type="tel" value={phone} onChange={handlePhone} className="form-personal-input" />
-                    <div>
-                        <Button onClick={handleSubmit} className="form-personal-next">Next Step</Button>
-                    </div>
                 </form>
             </div>
         </>

@@ -28,8 +28,8 @@ export default function FormPlan({ handleNext, handleBack }) {
                 <span>Monthly</span><Switch /><span>Yearly</span>
             </div>
 
-            <Button className="form-personal-back" onClick={handleBack}>Go Back</Button>
-            <Button className="form-personal-next" onClick={handleNext}>Next Step</Button>
+            {/* <Button className="form-personal-back" onClick={handleBack}>Go Back</Button>
+            <Button className="form-personal-next" onClick={handleNext}>Next Step</Button> */}
         </div>
     )
 }
