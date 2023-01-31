@@ -2,19 +2,20 @@ import React from "react";
 import Button from '@mui/material/Button';
 import AddonCard from "./AddonCard"
 
-export default function Addons() {
+export default function Addons({ handleAddon }) {
     const addonsData = [{ title: "Online service", desc: "Access to multiplayer games", monthly: "1" },
     { title: "Larger storage", desc: "Extra 1TB of cloud save", monthly: "2" },
     { title: "Customizable Profile", desc: "Custom theme on your profile", monthly: "2" }]
 
     function renderAddons() {
         return (
-            addonsData.map((addon, index) => {
+            addonsData.map((item, index) => {
                 return <AddonCard
                     key={index}
-                    title={addon.title}
-                    desc={addon.desc}
-                    monthly={addon.monthly}
+                    title={item.title}
+                    desc={item.desc}
+                    monthly={item.monthly}
+                    handleAddon={handleAddon}
                 />
             })
         )
