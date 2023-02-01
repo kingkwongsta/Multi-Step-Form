@@ -44,15 +44,21 @@ export default function Form({ step, handleNext, handleBack }) {
         })
         console.log(addon)
     }
+    //****  BILLING  |  True = Monthly  |  False = Yearly
+    const [billing, setBilling] = useState(true)
+    function handleBilling() {
+        setBilling(prev => !prev)
+        console.log(billing)
+    }
     return (
         <>
             {step === 1 && <FormPersonalInfo name={name} email={email} phone={phone} handleNext={handleNext} handleName={handleName} handleEmail={handleEmail} handlePhone={handlePhone} />}
-            {step === 2 && <FormPlan handlePlan={handlePlan} handleNext={handleNext} handleBack={handleBack} />}
-            {step === 3 && <Addons handleAddon={handleAddon} handleNext={handleNext} handleBack={handleBack} />}
+            {step === 2 && <FormPlan handlePlan={handlePlan} handleNext={handleNext} handleBack={handleBack} billing={billing} handleBilling={handleBilling} />}
+            {step === 3 && <Addons handleAddon={handleAddon} handleNext={handleNext} handleBack={handleBack} billing={billing} />}
             {step === 4 && <Summary handleNext={handleNext} handleBack={handleBack} />}
-            //Back Button after step 1
+            {/* Back Button after step 1 */}
             {step >= 2 && <Button className="form-back" onClick={handleBack}>Go Back</Button>}
-            //Next button and confirm for last step
+            {/* Next button and confirm for last step */}
             {step < 4 ? <Button className="form-next" onClick={handleNext}>Next Step</Button> : <Button className="form-confirm">Confirm</Button>}
         </>
     )
