@@ -5,18 +5,20 @@ import Button from '@mui/material/Button';
 import Switch from '@mui/material/Switch';
 
 
-export default function FormPlan({ handleNext, handleBack }) {
-    const [plan, setPlan] = useState("")
+export default function FormPlan({ handlePlan, handleNext, handleBack }) {
     const planData = [{ name: "Arcade", monthly: 9, icon: plan_icon }, { name: "Advanced", monthly: 12, icon: plan_icon }, { name: "Pro", monthly: 15, icon: plan_icon }]
 
     function renderPlans() {
         return (
             planData.map((plan, index) => {
-                return <PlanCard key={index} name={plan.name} monthly={plan.monthly} icon={plan.icon} />
+                return <PlanCard key={index}
+                    name={plan.name}
+                    monthly={plan.monthly}
+                    icon={plan.icon}
+                    handlePlan={handlePlan} />
             })
         )
     }
-
     return (
         <div className="plan-section">
             <h2 className="plan-title">Select your plan</h2>

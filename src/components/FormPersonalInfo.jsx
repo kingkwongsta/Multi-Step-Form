@@ -4,8 +4,6 @@ import Button from '@mui/material/Button';
 
 export default function FormPersonalInfo({ name, email, phone, handleName, handleEmail, handlePhone, handleNext }) {
 
-
-
     function handleSubmit(event) {
         event.preventDefault();
         handleNext();
