@@ -3,9 +3,6 @@ import React from "react";
 export default function AddonCard({ title, desc, monthly, handleAddon }) {
     function handleSelection() {
         handleAddon(title)
-        // if (!addon) {
-        //     addon.includes(title) && addAddon(title)
-        // }
     }
     return (
         <div className="addoncard-container" onClick={() => handleSelection()}>
