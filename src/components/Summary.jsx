@@ -1,14 +1,20 @@
 import React from "react";
 import planData from "../data/plan"
 import addonsData from "../data/addon"
+import SummaryAddon from "./SummaryAddon";
 
 export default function Summary({ addon, plan }) {
 
-    const temp = ["Online service", "Larger storage"]
+    // const temp = ["Online service", "Larger storage"]
 
-    const renderAddons = temp.map(x => {
+    const renderAddons = addon.map((x, key) => {
         const index = addonsData.map(y => y.title).indexOf(x)
-        return (<p>{x} and {addonsData[index].monthly}</p>)
+        return (
+            <SummaryAddon key={key}
+                title={x}
+                monthly={addonsData[index].monthly}
+                yearly={addonsData[index].yearly} />
+        )
     })
 
 
