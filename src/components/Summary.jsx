@@ -12,6 +12,7 @@ export default function Summary({ addon, plan, billing }) {
         return (
             <SummaryAddon key={key}
                 title={x}
+                billing={billing}
                 monthly={addonsData[index].monthly}
                 yearly={addonsData[index].yearly} />
         )
