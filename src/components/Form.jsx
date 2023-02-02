@@ -55,7 +55,7 @@ export default function Form({ step, handleNext, handleBack }) {
             {step === 1 && <FormPersonalInfo name={name} email={email} phone={phone} handleNext={handleNext} handleName={handleName} handleEmail={handleEmail} handlePhone={handlePhone} />}
             {step === 2 && <FormPlan handlePlan={handlePlan} handleNext={handleNext} handleBack={handleBack} billing={billing} handleBilling={handleBilling} />}
             {step === 3 && <Addons handleAddon={handleAddon} handleNext={handleNext} handleBack={handleBack} billing={billing} />}
-            {step === 4 && <Summary plan={plan} addon={addon} handleBack={handleBack} />}
+            {step === 4 && <Summary plan={plan} addon={addon} billing={billing} handleBack={handleBack} />}
             {/* Back Button after step 1 */}
             {step >= 2 && <Button className="form-back" onClick={handleBack}>Go Back</Button>}
             {/* Next button and confirm for last step */}
