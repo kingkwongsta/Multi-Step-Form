@@ -4,8 +4,6 @@ import AddonCard from "./AddonCard"
 import addonsData from "../data/addon"
 
 export default function Addons({ handleAddon, billing }) {
-
-
     function renderAddons() {
         return (
             addonsData.map((item, index) => {
