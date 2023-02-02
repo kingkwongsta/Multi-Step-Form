@@ -14,7 +14,6 @@ function App() {
     setStep(prev => prev -= 1)
     console.log("Back Submitted")
   }
-
   return (
     <div className="App">
       <div className="form">

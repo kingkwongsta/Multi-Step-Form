@@ -1,14 +1,11 @@
 import { useState, useEffect } from "react";
-import plan_icon from "../assets/icon-arcade.svg"
 import PlanCard from "./PlanCard"
 import Button from '@mui/material/Button';
 import Switch from '@mui/material/Switch';
+import planData from "../data/plan"
 
 
 export default function FormPlan({ handlePlan, handleNext, handleBack, billing, handleBilling }) {
-    const planData = [{ name: "Arcade", monthly: 9, yearly: 90, icon: plan_icon },
-    { name: "Advanced", monthly: 12, yearly: 120, icon: plan_icon },
-    { name: "Pro", monthly: 15, yearly: 150, icon: plan_icon }]
     const [checked, setChecked] = useState(false);
     useEffect(() => {
         setChecked(prev => !prev)
