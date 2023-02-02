@@ -17,6 +17,14 @@ export default function Summary({ addon, plan, billing }) {
                 yearly={addonsData[index].yearly} />
         )
     })
+    function planMoPrice() {
+        const index = planData.map(x => x.name).indexOf(plan)
+        return planData[index].monthly
+    }
+    function planYrPrice() {
+        const index = planData.map(x => x.name).indexOf(plan)
+        return planData[index].yearly
+    }
 
 
     return (
@@ -24,7 +32,12 @@ export default function Summary({ addon, plan, billing }) {
             <h2 className="form-title">Finishing up</h2>
             <p className="form-subtext">Double-check everything looks OK before confirming.</p>
             <div className="plan-section">
-                {plan} {billing ? <span>(Monthly)</span> : <span>(Yearly)</span>}
+                <div className="plan-name">
+                    {plan} {billing ? <span>(Monthly)</span> : <span>(Yearly)</span>}
+                </div>
+                <div className="plan-price">
+                    +${billing ? planMoPrice() : planYrPrice()}/{billing ? <span>mo</span> : <span>yr</span>}
+                </div>
             </div>
             <div className="addon-section">
                 {renderAddons}
