@@ -1,21 +1,28 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import plan_icon from "../assets/icon-arcade.svg"
 import PlanCard from "./PlanCard"
 import Button from '@mui/material/Button';
 import Switch from '@mui/material/Switch';
 
 
-export default function FormPlan({ handlePlan, handleNext, handleBack }) {
-    const planData = [{ name: "Arcade", monthly: 9, icon: plan_icon }, { name: "Advanced", monthly: 12, icon: plan_icon }, { name: "Pro", monthly: 15, icon: plan_icon }]
-
+export default function FormPlan({ handlePlan, handleNext, handleBack, billing, handleBilling }) {
+    const planData = [{ name: "Arcade", monthly: 9, yearly: 90, icon: plan_icon },
+    { name: "Advanced", monthly: 12, yearly: 120, icon: plan_icon },
+    { name: "Pro", monthly: 15, yearly: 150, icon: plan_icon }]
+    const [checked, setChecked] = useState(false);
+    useEffect(() => {
+        setChecked(prev => !prev)
+    }, [billing])
     function renderPlans() {
         return (
             planData.map((plan, index) => {
                 return <PlanCard key={index}
                     name={plan.name}
                     monthly={plan.monthly}
+                    yearly={plan.yearly}
                     icon={plan.icon}
-                    handlePlan={handlePlan} />
+                    handlePlan={handlePlan}
+                    billing={billing} />
             })
         )
     }
@@ -27,7 +34,7 @@ export default function FormPlan({ handlePlan, handleNext, handleBack }) {
                 {renderPlans()}
             </div>
             <div>
-                <span>Monthly</span><Switch /><span>Yearly</span>
+                <span>Monthly</span><Switch checked={checked} onClick={handleBilling} /><span>Yearly</span>
             </div>
 
             {/* <Button className="form-personal-back" onClick={handleBack}>Go Back</Button>
