@@ -18,7 +18,7 @@ function App() {
     <div className="App">
       <div className="form">
         <div className="left-side">
-          <FormNav />
+          <FormNav step={step} />
         </div>
         <div className="right-side">
           <Form step={step} handleNext={handleNext} handleBack={handleBack} />
