@@ -14,11 +14,14 @@ function App() {
     setStep((prev) => (prev -= 1));
     console.log("Back Submitted");
   }
+  function handleStepNav(selection) {
+    setStep(selection);
+  }
   return (
     <div className="App">
       <div className="form">
         <div className="left-side">
-          <FormNav step={step} />
+          <FormNav step={step} handleStepNav={handleStepNav} />
         </div>
         <div className="right-side">
           <Form step={step} handleNext={handleNext} handleBack={handleBack} />

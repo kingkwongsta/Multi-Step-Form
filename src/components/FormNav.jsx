@@ -1,7 +1,7 @@
 import React from "react";
 import FormNavStep from "./FormNavStep";
 
-export default function FormNav(step) {
+export default function FormNav(step, handleStepNav) {
   const stepData = [
     { stepNum: 1, name: "Your Info" },
     { stepNum: 2, name: "Select Plan" },
@@ -13,6 +13,7 @@ export default function FormNav(step) {
       <FormNavStep
         key={index}
         step={step}
+        handleStepNav={handleStepNav}
         stepNum={stepItem.stepNum}
         name={stepItem.name}
       />
