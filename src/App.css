@@ -19,10 +19,11 @@
 }
 
 .left-side {
-  width: 30%;
+  width: 25%;
   background-color: hsl(243, 100%, 62%);
   background-image: url("./assets/bg-sidebar-desktop.svg");
   background-size: cover;
+  border-radius: 10px;
 }
 
 .right-side {
