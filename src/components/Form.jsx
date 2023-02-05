@@ -8,6 +8,20 @@ import Complete from "./Complete";
 // MUI
 import Button from "@mui/material/Button";
 
+import { createTheme } from "@mui/material/styles";
+import { green, purple } from "@mui/material/colors";
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: purple[500],
+    },
+    secondary: {
+      main: green[500],
+    },
+  },
+});
+
 export default function Form({ step, handleNext, handleBack }) {
   //****  PERSONAL INFORMATION SECTION
   const [name, setName] = useState("");
@@ -100,7 +114,12 @@ export default function Form({ step, handleNext, handleBack }) {
       )}
       {/* Next button and confirm for last step */}
       {step < 4 && (
-        <Button className="form-next" onClick={handleNext}>
+        <Button
+          variant="contained"
+          // color="red"
+          className="form-next"
+          onClick={handleNext}
+        >
           Next Step
         </Button>
       )}
