@@ -31,7 +31,7 @@
   margin: 20px 40px 0 50px;
 }
 
-/* FORM NAVIGATION COMPONENT */
+/* LEFT SIDE FORM NAVIGATION COMPONENT */
 
 .step-section {
   display: flex;
@@ -72,7 +72,7 @@
   font-size: 10px;
 }
 
-/* RIGHT SIDE */
+/* RIGHT SIDE FORM*/
 .form-title {
   font-size: 1.1rem;
   letter-spacing: 1px;
