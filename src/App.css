@@ -133,3 +133,15 @@
   inline-size: min-content;
   width: 87px;
 }
+.plan-billing {
+  background-color: hsl(217, 100%, 97%);
+  margin: 20px 0 50px 0;
+  font-size: 0.6rem;
+  letter-spacing: 0.1px;
+  font-weight: 500;
+  color: hsl(213, 96%, 18%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

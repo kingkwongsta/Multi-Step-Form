@@ -37,7 +37,7 @@ export default function FormPlan({
         You have the option of monthly or yearly billing.
       </h4>
       <div className="plan-card-section">{renderPlans()}</div>
-      <div>
+      <div className="plan-billing">
         <span>Monthly</span>
         <Switch checked={checked} onClick={handleBilling} />
         <span>Yearly</span>
