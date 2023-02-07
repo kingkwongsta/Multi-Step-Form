@@ -95,3 +95,39 @@
   height: 20px;
   margin: 0 0 15px 0;
 }
+
+/* PLAN PAGE */
+.plan-card-section {
+  display: flex;
+  justify-content: space-between;
+}
+.plan-card {
+  border: 1px solid hsl(229, 24%, 87%);
+  border-radius: 5px;
+  padding: 10px 50px 10px 10px;
+}
+.plan-card-icon {
+  max-width: 25px;
+  margin-bottom: 30px;
+}
+
+.plan-card-title {
+  font-size: 0.7rem;
+  letter-spacing: 0.1px;
+  font-weight: 500;
+  color: hsl(213, 96%, 18%);
+}
+
+.plan-card-price {
+  font-size: 0.7rem;
+  letter-spacing: 0.2px;
+  font-weight: 200;
+  color: hsl(231, 11%, 63%);
+  padding: 2px 0 2px 0;
+}
+.yearly-offer {
+  font-size: 0.7rem;
+  letter-spacing: 0.2px;
+  font-weight: 200;
+  color: hsl(213, 96%, 18%);
+}
