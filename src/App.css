@@ -1,5 +1,5 @@
 * {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   margin: 0px;
   padding: 0px;
 }
@@ -19,45 +19,131 @@
 }
 
 .left-side {
-  width: 30%;
+  width: 25%;
   background-color: hsl(243, 100%, 62%);
+  background-image: url("./assets/bg-sidebar-desktop.svg");
+  background-size: cover;
+  border-radius: 10px;
 }
 
 .right-side {
-  width: 70%
+  width: 70%;
+  margin: 20px 40px 0 50px;
 }
 
-/* FORM NAVIGATION COMPONENT */
+/* LEFT SIDE FORM NAVIGATION COMPONENT */
 
 .step-section {
   display: flex;
-  margin: 20px;
+  margin: 25px;
 }
 
 .form-circle {
   height: 25px;
   width: 25px;
+  color: white;
   border-radius: 50%;
-  background-color: hsl(228, 100%, 84%);
-  display: inline-block;
-  /* height: 100%; */
-  line-height: 1.25;
-  padding: 0;
+  border: solid 1px white;
+  background-color: transparent;
   text-align: center;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-text-section {
+  margin: 0px 0px 0px 15px;
+  display: grid;
+  letter-spacing: 1px;
 }
 
 .step-text {
-  margin: 0px 0px 0px 10px;
-}
-
-.step {
-  color: hsl(231, 11%, 63%);
-  font-weight: 400px;
+  /* - Cool gray: hsl(231, 11%, 63%)
+- Light gray: hsl(229, 24%, 87%) */
+  color: hsl(229, 24%, 87%);
+  font-weight: 400;
   font-size: 8px;
 }
 
 .step-subtext {
   color: white;
-  font-weight: 700px;
+  font-weight: 600;
   font-size: 10px;
+}
+
+/* RIGHT SIDE FORM*/
+.form-title {
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  color: hsl(213, 96%, 18%);
+}
+.form-subtitle {
+  font-size: 0.7rem;
+  letter-spacing: 0.2px;
+  font-weight: 200;
+  padding: 5px 0 20px 0;
+  color: hsl(231, 11%, 63%);
+}
+.form-personal-form-text {
+  font-size: 0.7rem;
+  color: hsl(213, 96%, 18%);
+  padding: 0 0 3px 0;
+}
+.form-personal-input {
+  width: 80%;
+  height: 20px;
+  margin: 0 0 15px 0;
+}
+
+/* PLAN PAGE */
+.plan-card-section {
+  display: flex;
+  justify-content: space-between;
+}
+.plan-card {
+  border: 1px solid hsl(229, 24%, 87%);
+  border-radius: 5px;
+  padding: 10px 30px 10px 10px;
+  min-width: 24%;
+  margin-right: 3px;
+}
+.plan-card-icon {
+  max-width: 30px;
+  margin-bottom: 30px;
+}
+
+.plan-card-title {
+  font-size: 0.7rem;
+  letter-spacing: 0.1px;
+  font-weight: 500;
+  color: hsl(213, 96%, 18%);
+}
+
+.plan-card-price {
+  font-size: 0.7rem;
+  letter-spacing: 0.2px;
+  font-weight: 200;
+  color: hsl(231, 11%, 63%);
+  padding: 2px 0 5px 0;
+}
+.yearly-offer {
+  font-size: 0.7rem;
+  letter-spacing: 0.2px;
+  font-weight: 200;
+  color: hsl(213, 96%, 18%);
+  inline-size: min-content;
+  width: 87px;
+}
+.plan-billing {
+  background-color: hsl(217, 100%, 97%);
+  margin: 20px 0 50px 0;
+  font-size: 0.6rem;
+  letter-spacing: 0.1px;
+  font-weight: 500;
+  color: hsl(213, 96%, 18%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
