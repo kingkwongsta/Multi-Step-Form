@@ -105,9 +105,11 @@
   border: 1px solid hsl(229, 24%, 87%);
   border-radius: 5px;
   padding: 10px 30px 10px 10px;
+  min-width: 24%;
+  margin-right: 3px;
 }
 .plan-card-icon {
-  max-width: 25px;
+  max-width: 30px;
   margin-bottom: 30px;
 }
 
@@ -123,7 +125,7 @@
   letter-spacing: 0.2px;
   font-weight: 200;
   color: hsl(231, 11%, 63%);
-  padding: 2px 0 2px 0;
+  padding: 2px 0 5px 0;
 }
 .yearly-offer {
   font-size: 0.7rem;
