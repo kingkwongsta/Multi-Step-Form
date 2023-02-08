@@ -147,3 +147,27 @@
   align-items: center;
   justify-content: center;
 }
+/* ADDON FORM */
+.addoncard-container {
+  display: flex;
+  width: 90%;
+  min-height: 60px;
+  justify-content: space-between;
+  align-items: center;
+}
+.addoncard-left {
+  display: flex;
+}
+.addoncard-title {
+  font-size: 0.7rem;
+  letter-spacing: 0.1px;
+  font-weight: 500;
+  color: hsl(213, 96%, 18%);
+}
+.addoncard-desc {
+  font-size: 0.7rem;
+  letter-spacing: 0.2px;
+  font-weight: 200;
+  color: hsl(231, 11%, 63%);
+  padding: 4px 0 5px 0;
+}
