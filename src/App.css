@@ -184,3 +184,47 @@
   font-weight: 400;
   color: #7f5bc7;
 }
+/* SUMMARY */
+.summary-card {
+  background-color: hsl(217, 100%, 97%);
+  border-radius: 5px;
+  padding: 20px;
+}
+.summary-plan-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+.summary-plan-name {
+  font-size: 0.7rem;
+  letter-spacing: 0.1px;
+  font-weight: 500;
+  color: hsl(213, 96%, 18%);
+}
+.summary-plan-price {
+  font-size: 0.7rem;
+  letter-spacing: 0.1px;
+  font-weight: 600;
+  color: hsl(213, 96%, 18%);
+}
+
+.summary-addon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+.summary-addon-title {
+  font-size: 0.6rem;
+  letter-spacing: 0.2px;
+  font-weight: 400;
+  color: hsl(231, 11%, 63%);
+  padding: 4px 0 5px 0;
+}
+.summary-addon-price {
+  font-size: 0.6rem;
+  letter-spacing: 0.1px;
+  font-weight: 400;
+  color: hsl(213, 96%, 18%);
+}
