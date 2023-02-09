@@ -17,7 +17,9 @@
   border-radius: 5px;
   height: 500px;
 }
-
+.form-section {
+  min-height: 350px;
+}
 .left-side {
   width: 25%;
   background-color: hsl(243, 100%, 62%);
@@ -154,9 +156,14 @@
   min-height: 60px;
   justify-content: space-between;
   align-items: center;
+  border: 0.6px solid #201536;
+  border-radius: 5px;
+  margin-bottom: 12px;
+  padding: 0px 15px 0 0;
 }
 .addoncard-left {
   display: flex;
+  align-items: center;
 }
 .addoncard-title {
   font-size: 0.7rem;
@@ -165,9 +172,15 @@
   color: hsl(213, 96%, 18%);
 }
 .addoncard-desc {
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   letter-spacing: 0.2px;
   font-weight: 200;
   color: hsl(231, 11%, 63%);
   padding: 4px 0 5px 0;
+}
+.addoncard-price {
+  font-size: 0.7rem;
+  letter-spacing: 0.1px;
+  font-weight: 400;
+  color: #7f5bc7;
 }
