@@ -228,3 +228,22 @@
   font-weight: 400;
   color: hsl(213, 96%, 18%);
 }
+.summary-total-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 20px 0 20px;
+}
+.summary-total-text {
+  font-size: 0.6rem;
+  letter-spacing: 0.2px;
+  font-weight: 400;
+  color: hsl(231, 11%, 63%);
+  padding: 4px 0 5px 0;
+}
+.summary-total-number {
+  font-size: 0.8rem;
+  letter-spacing: 0.1px;
+  font-weight: 600;
+  color: hsl(243, 100%, 62%);
+}

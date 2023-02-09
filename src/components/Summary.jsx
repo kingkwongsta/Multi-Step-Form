@@ -83,7 +83,9 @@ export default function Summary({ addon, plan, billing, handleBilling }) {
           <div className="summary-total-text">
             Total (per {billing ? "month" : "year"})
           </div>
-          <div className="summary-total-number">{totalPrice}</div>
+          <div className="summary-total-number">
+            +${totalPrice}/{billing ? <span>mo</span> : <span>yr</span>}
+          </div>
         </div>
       </div>
     </div>
