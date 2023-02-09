@@ -68,66 +68,70 @@ export default function Form({ step, handleNext, handleBack }) {
   }
   return (
     <>
-      {step === 1 && (
-        <FormPersonalInfo
-          name={name}
-          email={email}
-          phone={phone}
-          handleNext={handleNext}
-          handleName={handleName}
-          handleEmail={handleEmail}
-          handlePhone={handlePhone}
-        />
-      )}
-      {step === 2 && (
-        <FormPlan
-          handlePlan={handlePlan}
-          handleNext={handleNext}
-          handleBack={handleBack}
-          billing={billing}
-          handleBilling={handleBilling}
-        />
-      )}
-      {step === 3 && (
-        <Addons
-          handleAddon={handleAddon}
-          handleNext={handleNext}
-          handleBack={handleBack}
-          billing={billing}
-        />
-      )}
-      {step === 4 && (
-        <Summary
-          plan={plan}
-          addon={addon}
-          billing={billing}
-          handleBack={handleBack}
-          handleBilling={handleBilling}
-        />
-      )}
-      {step === 5 && <Complete />}
-      {/* Back Button after step 1 */}
-      {step >= 2 && step <= 4 && (
-        <Button className="form-back" onClick={handleBack}>
-          Go Back
-        </Button>
-      )}
-      {/* Next button and confirm for last step */}
-      {step < 4 && (
-        <Button
-          variant="contained"
-          // color="red"
-          className="form-next"
-          onClick={handleNext}
-        >
-          Next Step
-        </Button>
-      )}
-      {step === 4 && (
-        <Button className="form-confirm" onClick={handleNext}>
-          Confirm
-        </Button>
-      )}
+      <div className="form-section">
+        {step === 1 && (
+          <FormPersonalInfo
+            name={name}
+            email={email}
+            phone={phone}
+            handleNext={handleNext}
+            handleName={handleName}
+            handleEmail={handleEmail}
+            handlePhone={handlePhone}
+          />
+        )}
+        {step === 2 && (
+          <FormPlan
+            handlePlan={handlePlan}
+            handleNext={handleNext}
+            handleBack={handleBack}
+            billing={billing}
+            handleBilling={handleBilling}
+          />
+        )}
+        {step === 3 && (
+          <Addons
+            handleAddon={handleAddon}
+            handleNext={handleNext}
+            handleBack={handleBack}
+            billing={billing}
+          />
+        )}
+        {step === 4 && (
+          <Summary
+            plan={plan}
+            addon={addon}
+            billing={billing}
+            handleBack={handleBack}
+            handleBilling={handleBilling}
+          />
+        )}
+        {step === 5 && <Complete />}
+      </div>
+      <div className="nav-buttons">
+        {/* Back Button after step 1 */}
+        {step >= 2 && step <= 4 && (
+          <Button className="form-back" onClick={handleBack}>
+            Go Back
+          </Button>
+        )}
+        {/* Next button and confirm for last step */}
+        {step < 4 && (
+          <Button
+            variant="contained"
+            // color="red"
+            className="form-next"
+            onClick={handleNext}
+          >
+            Next Step
+          </Button>
+        )}
+        {step === 4 && (
+          <Button className="form-confirm" onClick={handleNext}>
+            Confirm
+          </Button>
+        )}
+      </div>
     </>
   );
 }
