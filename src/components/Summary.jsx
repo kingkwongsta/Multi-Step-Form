@@ -4,21 +4,32 @@ import addonsData from "../data/addon";
 import SummaryAddon from "./SummaryAddon";
 
 export default function Summary({ addon, plan, billing, handleBilling }) {
-  const [totalMonthly, setTotalMonthly] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0);
   useEffect(() => {
-    setTotalMonthly(getMonthly());
-  }, [addon, plan]);
+    billing ? setTotalPrice(getMonthly()) : setTotalPrice(getYearly());
+  }, [addon, plan, billing]);
 
   function getMonthly() {
     const planIndex = planData.map((x) => x.name).indexOf(plan);
-    let monthlyPrice = planData[planIndex].monthly;
+    let totalMonthly = planData[planIndex].monthly;
 
     for (let i = 0; i < addonsData.length; i++) {
       if (addon.includes(addonsData[i].title)) {
-        monthlyPrice += addonsData[i].monthly;
+        totalMonthly += addonsData[i].monthly;
       }
     }
-    return monthlyPrice;
+    return totalMonthly;
+  }
+  function getYearly() {
+    const planIndex = planData.map((x) => x.name).indexOf(plan);
+    let totalYearly = planData[planIndex].yearly;
+
+    for (let i = 0; i < addonsData.length; i++) {
+      if (addon.includes(addonsData[i].title)) {
+        totalYearly += addonsData[i].yearly;
+      }
+    }
+    return totalYearly;
   }
 
   const renderAddons = addon.map((x, key) => {
@@ -72,7 +83,7 @@ export default function Summary({ addon, plan, billing, handleBilling }) {
           <div className="summary-total-text">
             Total (per {billing ? "month" : "year"})
           </div>
-          <div className="summary-total-number">{totalMonthly}</div>
+          <div className="summary-total-number">{totalPrice}</div>
         </div>
       </div>
     </div>
