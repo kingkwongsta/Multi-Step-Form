@@ -46,6 +46,29 @@ export default function Summary({ addon, plan, billing, handleBilling }) {
         </div>
       </div>
       <div className="addon-section">{renderAddons}</div>
+      =======
+      <p className="form-subtitle">
+        Double-check everything looks OK before confirming.
+      </p>
+      <div className="summary-card">
+        <div className="summary-plan-section">
+          <div className="plan-section-and-button">
+            <div className="summary-plan-name">
+              {plan} {billing ? <span>(Monthly)</span> : <span>(Yearly)</span>}
+              <div>
+                <button onClick={handleBilling}>testing button</button>
+              </div>
+            </div>
+          </div>
+          <div className="summary-plan-price">
+            +${billing ? planMoPrice() : planYrPrice()}/
+            {billing ? <span>mo</span> : <span>yr</span>}
+          </div>
+        </div>
+        <hr />
+        <div className="summary-addon-section">{renderAddons}</div>
+      </div>
+      >>>>>>> 387c7406a6eab05982f46a13f4b1e6f2879a7ea2
     </div>
   );
 }
