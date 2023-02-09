@@ -1,10 +1,15 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import planData from "../data/plan";
 import addonsData from "../data/addon";
 import SummaryAddon from "./SummaryAddon";
 
 export default function Summary({ addon, plan, billing, handleBilling }) {
-  // const temp = ["Online service", "Larger storage"]
+  const [totalMonthly, setTotalMonthly] = useState(0);
+  useEffect(() => {
+    const planIndex = planData.map((x) => x.name).indexOf(plan);
+    const monthly = planData[planIndex].monthly;
+    setTotalMonthly(monthly);
+  }, [addon, plan]);
 
   const renderAddons = addon.map((x, key) => {
     const index = addonsData.map((y) => y.title).indexOf(x);
@@ -30,45 +35,36 @@ export default function Summary({ addon, plan, billing, handleBilling }) {
   return (
     <div className="summary-section">
       <h2 className="form-title">Finishing up</h2>
-      <p className="form-subtext">
-        Double-check everything looks OK before confirming.
-      </p>
-      <div className="plan-section">
-        <div className="plan-section-and-button">
-          <div className="plan-name">
-            {plan} {billing ? <span>(Monthly)</span> : <span>(Yearly)</span>}
-            <button onClick={handleBilling}>testing button</button>
-          </div>
-        </div>
-        <div className="plan-price">
-          +${billing ? planMoPrice() : planYrPrice()}/
-          {billing ? <span>mo</span> : <span>yr</span>}
-        </div>
-      </div>
-      <div className="addon-section">{renderAddons}</div>
-      =======
       <p className="form-subtitle">
         Double-check everything looks OK before confirming.
       </p>
-      <div className="summary-card">
-        <div className="summary-plan-section">
-          <div className="plan-section-and-button">
-            <div className="summary-plan-name">
-              {plan} {billing ? <span>(Monthly)</span> : <span>(Yearly)</span>}
-              <div>
-                <button onClick={handleBilling}>testing button</button>
+      <div className="plan-section">
+        <div className="summary-card">
+          <div className="summary-plan-section">
+            <div className="plan-section-and-button">
+              <div className="summary-plan-name">
+                {plan}{" "}
+                {billing ? <span>(Monthly)</span> : <span>(Yearly)</span>}
+                <div>
+                  <button onClick={handleBilling}>testing button</button>
+                </div>
               </div>
             </div>
+            <div className="summary-plan-price">
+              +${billing ? planMoPrice() : planYrPrice()}/
+              {billing ? <span>mo</span> : <span>yr</span>}
+            </div>
           </div>
-          <div className="summary-plan-price">
-            +${billing ? planMoPrice() : planYrPrice()}/
-            {billing ? <span>mo</span> : <span>yr</span>}
-          </div>
+          <hr />
+          <div className="summary-addon-section">{renderAddons}</div>
         </div>
-        <hr />
-        <div className="summary-addon-section">{renderAddons}</div>
+        <div className="summary-total-price">
+          <div className="summary-total-text">
+            Total (per {billing ? "month" : "year"})
+          </div>
+          <div className="summary-total-number">{totalMonthly}</div>
+        </div>
       </div>
-      >>>>>>> 387c7406a6eab05982f46a13f4b1e6f2879a7ea2
     </div>
   );
 }
