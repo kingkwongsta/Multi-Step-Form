@@ -6,10 +6,20 @@ import SummaryAddon from "./SummaryAddon";
 export default function Summary({ addon, plan, billing, handleBilling }) {
   const [totalMonthly, setTotalMonthly] = useState(0);
   useEffect(() => {
-    const planIndex = planData.map((x) => x.name).indexOf(plan);
-    const monthly = planData[planIndex].monthly;
-    setTotalMonthly(monthly);
+    setTotalMonthly(getMonthly());
   }, [addon, plan]);
+
+  function getMonthly() {
+    const planIndex = planData.map((x) => x.name).indexOf(plan);
+    let monthlyPrice = planData[planIndex].monthly;
+
+    for (let i = 0; i < addonsData.length; i++) {
+      if (addon.includes(addonsData[i].title)) {
+        monthlyPrice += addonsData[i].monthly;
+      }
+    }
+    return monthlyPrice;
+  }
 
   const renderAddons = addon.map((x, key) => {
     const index = addonsData.map((y) => y.title).indexOf(x);
