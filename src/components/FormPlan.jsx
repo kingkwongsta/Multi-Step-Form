@@ -8,6 +8,7 @@ export default function FormPlan({
   handlePlan,
   handleNext,
   handleBack,
+  plan,
   billing,
   handleBilling,
 }) {
@@ -16,16 +17,17 @@ export default function FormPlan({
     setChecked((prev) => !prev);
   }, [billing]);
   function renderPlans() {
-    return planData.map((plan, index) => {
+    return planData.map((thePlan, index) => {
       return (
         <PlanCard
           key={index}
-          name={plan.name}
-          monthly={plan.monthly}
-          yearly={plan.yearly}
-          icon={plan.icon}
+          name={thePlan.name}
+          monthly={thePlan.monthly}
+          yearly={thePlan.yearly}
+          icon={thePlan.icon}
           handlePlan={handlePlan}
           billing={billing}
+          plan={plan}
         />
       );
     });
