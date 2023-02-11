@@ -28,7 +28,7 @@ export default function AddonCard({
       onClick={() => handleSelection()}
     >
       <div className="addoncard-left">
-        <Checkbox />
+        <Checkbox checked={addon.includes(title) ? true : false} />
         <div className="addoncard-text">
           <p className="addoncard-title">{title}</p>
           <p className="addoncard-desc">{desc}</p>
