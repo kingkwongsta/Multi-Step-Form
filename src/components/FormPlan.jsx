@@ -41,7 +41,7 @@ export default function FormPlan({
       <div className="plan-card-section">{renderPlans()}</div>
       <div className="plan-billing">
         <span>Monthly</span>
-        <Switch checked={checked} onClick={handleBilling} />
+        <Switch checked={billing ? false : true} onClick={handleBilling} />
         <span>Yearly</span>
       </div>
 
