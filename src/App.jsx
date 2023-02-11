@@ -5,15 +5,19 @@ import FormNav from "./components/FormNav";
 import Form from "./components/Form";
 
 function App() {
+  //Track what step to display
   const [step, setStep] = useState(1);
+  //Move Foward with Next Button
   function handleNext() {
     setStep((prev) => (prev += 1));
     console.log("Next Submitted");
   }
+  //Move Backward with Next Button
   function handleBack() {
     setStep((prev) => (prev -= 1));
     console.log("Back Submitted");
   }
+  //Navigate to a step from Left Navbar
   function handleStepNav(selection) {
     setStep(selection);
   }
@@ -32,4 +36,3 @@ function App() {
 }
 
 export default App;
-//comments to test git on other computer
