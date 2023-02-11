@@ -36,13 +36,13 @@ export default function Form({ step, handleNext, handleBack }) {
           return [...prev, selection];
         })
       : //Remove addon if unselected
-        setAddon((prev) => {
-          const tempAddon = prev;
-          const index = tempAddon.indexOf(selection);
-          tempAddon.splice(index, 1);
-          return tempAddon;
-        });
-    console.log(addon);
+        // setAddon((prev) => {
+        //   const tempAddon = prev;
+        //   const index = tempAddon.indexOf(selection);
+        //   tempAddon.splice(index, 1);
+        //   return tempAddon;
+        // });
+        setAddon(addon.filter((x) => x !== selection));
   }
   //****  BILLING  |  True = Monthly  |  False = Yearly
   const [billing, setBilling] = useState(true);
