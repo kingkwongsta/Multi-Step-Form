@@ -23,7 +23,7 @@ export default function Form({ step, handleNext, handleBack }) {
     setPhone(event.target.value);
   }
   //****  PLAN & ADDON SECTION
-  const [plan, setPlan] = useState("Arcade");
+  const [plan, setPlan] = useState();
   const [addon, setAddon] = useState([]);
   function handlePlan(selection) {
     setPlan(selection);
@@ -71,6 +71,7 @@ export default function Form({ step, handleNext, handleBack }) {
             handlePlan={handlePlan}
             handleNext={handleNext}
             handleBack={handleBack}
+            plan={plan}
             billing={billing}
             handleBilling={handleBilling}
           />

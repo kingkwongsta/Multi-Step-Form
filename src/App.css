@@ -109,6 +109,7 @@
   padding: 10px 30px 10px 10px;
   min-width: 24%;
   margin-right: 3px;
+  cursor: pointer;
 }
 .plan-card-icon {
   max-width: 30px;
@@ -252,3 +253,4 @@
   font-weight: 600;
   color: hsl(243, 100%, 62%);
 }
+/* quick comment test for pushing */

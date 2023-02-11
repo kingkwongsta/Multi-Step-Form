@@ -8,6 +8,7 @@ export default function FormPlan({
   handlePlan,
   handleNext,
   handleBack,
+  plan,
   billing,
   handleBilling,
 }) {
@@ -16,20 +17,23 @@ export default function FormPlan({
     setChecked((prev) => !prev);
   }, [billing]);
   function renderPlans() {
-    return planData.map((plan, index) => {
+    return planData.map((thePlan, index) => {
       return (
         <PlanCard
           key={index}
-          name={plan.name}
-          monthly={plan.monthly}
-          yearly={plan.yearly}
-          icon={plan.icon}
+          name={thePlan.name}
+          monthly={thePlan.monthly}
+          yearly={thePlan.yearly}
+          icon={thePlan.icon}
           handlePlan={handlePlan}
           billing={billing}
+          plan={plan}
         />
       );
     });
   }
+  const selected = { color: "hsl(213, 96%, 18%)" };
+  const unselected = { color: "hsl(231, 11%, 63%)" };
   return (
     <div className="plan-section">
       <h2 className="form-title">Select your plan</h2>
@@ -38,9 +42,9 @@ export default function FormPlan({
       </h4>
       <div className="plan-card-section">{renderPlans()}</div>
       <div className="plan-billing">
-        <span>Monthly</span>
-        <Switch checked={checked} onClick={handleBilling} />
-        <span>Yearly</span>
+        <span style={billing ? selected : unselected}>Monthly</span>
+        <Switch checked={billing ? false : true} onClick={handleBilling} />
+        <span style={billing ? unselected : selected}>Yearly</span>
       </div>
 
       {/* <Button className="form-personal-back" onClick={handleBack}>Go Back</Button>
