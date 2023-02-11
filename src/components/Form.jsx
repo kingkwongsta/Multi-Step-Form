@@ -23,7 +23,7 @@ export default function Form({ step, handleNext, handleBack }) {
     setPhone(event.target.value);
   }
   //****  PLAN & ADDON SECTION
-  const [plan, setPlan] = useState();
+  const [plan, setPlan] = useState("Arcade");
   const [addon, setAddon] = useState([]);
   function handlePlan(selection) {
     setPlan(selection);
@@ -33,18 +33,16 @@ export default function Form({ step, handleNext, handleBack }) {
     //If the selection is not already in state (true then)
     !addon.includes(selection)
       ? setAddon((prev) => {
-          const tempAddon = prev;
-          tempAddon.push(selection);
-          return tempAddon;
-          //Remove addon if unselected
+          return [...prev, selection];
         })
-      : setAddon((prev) => {
-          const tempAddon = prev;
-          const index = tempAddon.indexOf(selection);
-          tempAddon.splice(index, 1);
-          return tempAddon;
-        });
-    console.log(addon);
+      : //Remove addon if unselected
+        // setAddon((prev) => {
+        //   const tempAddon = prev;
+        //   const index = tempAddon.indexOf(selection);
+        //   tempAddon.splice(index, 1);
+        //   return tempAddon;
+        // });
+        setAddon(addon.filter((x) => x !== selection));
   }
   //****  BILLING  |  True = Monthly  |  False = Yearly
   const [billing, setBilling] = useState(true);
@@ -82,6 +80,7 @@ export default function Form({ step, handleNext, handleBack }) {
             handleNext={handleNext}
             handleBack={handleBack}
             billing={billing}
+            addon={addon}
           />
         )}
         {step === 4 && (

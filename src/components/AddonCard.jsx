@@ -8,14 +8,27 @@ export default function AddonCard({
   yearly,
   billing,
   handleAddon,
+  addon,
 }) {
   function handleSelection() {
     handleAddon(title);
   }
+  const selected = {
+    border: "1px solid hsl(243, 100%, 62%)",
+    backgroundColor: "hsl(217, 100%, 97%)",
+  };
+  const unselected = {
+    border: "1px solid hsl(229, 24%, 87%)",
+    backgroundColor: "transparent",
+  };
   return (
-    <div className="addoncard-container" onClick={() => handleSelection()}>
+    <div
+      className="addoncard-container"
+      style={addon.includes(title) ? selected : unselected}
+      onClick={() => handleSelection()}
+    >
       <div className="addoncard-left">
-        <Checkbox />
+        <Checkbox checked={addon.includes(title) ? true : false} />
         <div className="addoncard-text">
           <p className="addoncard-title">{title}</p>
           <p className="addoncard-desc">{desc}</p>
