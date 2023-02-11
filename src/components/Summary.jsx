@@ -67,7 +67,13 @@ export default function Summary({ addon, plan, billing, handleBilling }) {
                 {plan}{" "}
                 {billing ? <span>(Monthly)</span> : <span>(Yearly)</span>}
                 <div>
-                  <button onClick={handleBilling}>testing button</button>
+                  <a
+                    href="#0"
+                    className="summary-change"
+                    onClick={handleBilling}
+                  >
+                    Change
+                  </a>
                 </div>
               </div>
             </div>

@@ -196,6 +196,11 @@
   justify-content: space-between;
   padding-bottom: 10px;
 }
+.summary-change {
+  font-size: 0.6rem;
+  font-weight: 300;
+  text-decoration: underline;
+}
 .summary-plan-name {
   font-size: 0.7rem;
   letter-spacing: 0.1px;
