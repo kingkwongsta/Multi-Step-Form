@@ -3,7 +3,7 @@ import Button from "@mui/material/Button";
 import AddonCard from "./AddonCard";
 import addonsData from "../data/addon";
 
-export default function Addons({ handleAddon, billing }) {
+export default function Addons({ handleAddon, billing, addon }) {
   function renderAddons() {
     return addonsData.map((item, index) => {
       return (
@@ -15,6 +15,7 @@ export default function Addons({ handleAddon, billing }) {
           yearly={item.yearly}
           billing={billing}
           handleAddon={handleAddon}
+          addon={addon}
         />
       );
     });

@@ -20,8 +20,6 @@ export default function PlanCard({
     border: "1px solid hsl(229, 24%, 87%)",
     backgroundColor: "transparent",
   };
-  console.log("name:", name);
-  console.log("plan:", plan);
   return (
     <div
       className="plan-card"
