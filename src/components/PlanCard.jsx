@@ -12,6 +12,7 @@ export default function PlanCard({
   function handleSelection(selection) {
     handlePlan(selection);
   }
+  //STYLING FOR SELECTING/UNSELECTING PLAN
   const selected = {
     border: "1px solid hsl(243, 100%, 62%)",
     backgroundColor: "hsl(217, 100%, 97%)",

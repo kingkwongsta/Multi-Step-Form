@@ -7,6 +7,8 @@ import Summary from "./Summary";
 import Complete from "./Complete";
 // MUI
 import Button from "@mui/material/Button";
+import { ThemeProvider } from "@mui/material/styles";
+import theme from "../styles.js";
 
 export default function Form({ step, handleNext, handleBack }) {
   //****  PERSONAL INFORMATION SECTION
@@ -35,23 +37,16 @@ export default function Form({ step, handleNext, handleBack }) {
       ? setAddon((prev) => {
           return [...prev, selection];
         })
-      : //Remove addon if unselected
-        // setAddon((prev) => {
-        //   const tempAddon = prev;
-        //   const index = tempAddon.indexOf(selection);
-        //   tempAddon.splice(index, 1);
-        //   return tempAddon;
-        // });
-        setAddon(addon.filter((x) => x !== selection));
+      : setAddon(addon.filter((x) => x !== selection));
   }
-  //****  BILLING  |  True = Monthly  |  False = Yearly
+  //****  BILLING CONTROLS  |  True = Monthly  |  False = Yearly
   const [billing, setBilling] = useState(true);
   function handleBilling() {
     setBilling((prev) => !prev);
     console.log(billing);
   }
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <div className="form-section">
         {step === 1 && (
           <FormPersonalInfo
@@ -94,6 +89,7 @@ export default function Form({ step, handleNext, handleBack }) {
         )}
         {step === 5 && <Complete />}
       </div>
+      {/*////////// BUTTON SECTION **********/}
       <div className="nav-buttons">
         {/* Back Button after step 1 */}
         {step >= 2 && step <= 4 && (
@@ -105,7 +101,7 @@ export default function Form({ step, handleNext, handleBack }) {
         {step < 4 && (
           <Button
             variant="contained"
-            // color="red"
+            color="primary"
             className="form-next"
             onClick={handleNext}
           >
@@ -118,6 +114,6 @@ export default function Form({ step, handleNext, handleBack }) {
           </Button>
         )}
       </div>
-    </>
+    </ThemeProvider>
   );
 }
