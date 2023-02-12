@@ -7,6 +7,8 @@ import Summary from "./Summary";
 import Complete from "./Complete";
 // MUI
 import Button from "@mui/material/Button";
+import { ThemeProvider } from "@mui/material/styles";
+import theme from "../styles.js";
 
 export default function Form({ step, handleNext, handleBack }) {
   //****  PERSONAL INFORMATION SECTION
@@ -44,7 +46,7 @@ export default function Form({ step, handleNext, handleBack }) {
     console.log(billing);
   }
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <div className="form-section">
         {step === 1 && (
           <FormPersonalInfo
@@ -99,7 +101,7 @@ export default function Form({ step, handleNext, handleBack }) {
         {step < 4 && (
           <Button
             variant="contained"
-            // color="red"
+            color="primary"
             className="form-next"
             onClick={handleNext}
           >
@@ -112,6 +114,6 @@ export default function Form({ step, handleNext, handleBack }) {
           </Button>
         )}
       </div>
-    </>
+    </ThemeProvider>
   );
 }
