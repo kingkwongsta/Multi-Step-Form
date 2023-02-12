@@ -35,16 +35,9 @@ export default function Form({ step, handleNext, handleBack }) {
       ? setAddon((prev) => {
           return [...prev, selection];
         })
-      : //Remove addon if unselected
-        // setAddon((prev) => {
-        //   const tempAddon = prev;
-        //   const index = tempAddon.indexOf(selection);
-        //   tempAddon.splice(index, 1);
-        //   return tempAddon;
-        // });
-        setAddon(addon.filter((x) => x !== selection));
+      : setAddon(addon.filter((x) => x !== selection));
   }
-  //****  BILLING  |  True = Monthly  |  False = Yearly
+  //****  BILLING CONTROLS  |  True = Monthly  |  False = Yearly
   const [billing, setBilling] = useState(true);
   function handleBilling() {
     setBilling((prev) => !prev);
@@ -94,6 +87,7 @@ export default function Form({ step, handleNext, handleBack }) {
         )}
         {step === 5 && <Complete />}
       </div>
+      {/*////////// BUTTON SECTION **********/}
       <div className="nav-buttons">
         {/* Back Button after step 1 */}
         {step >= 2 && step <= 4 && (
