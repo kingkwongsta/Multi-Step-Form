@@ -19,6 +19,7 @@
 }
 .form-section {
   min-height: 350px;
+  min-width: 450px;
 }
 .left-side {
   width: 25%;
@@ -26,11 +27,6 @@
   background-image: url("./assets/bg-sidebar-desktop.svg");
   background-size: cover;
   border-radius: 10px;
-}
-
-.right-side {
-  width: 70%;
-  margin: 20px 40px 0 50px;
 }
 
 /* LEFT SIDE FORM NAVIGATION COMPONENT */
@@ -75,6 +71,15 @@
 }
 
 /* RIGHT SIDE FORM*/
+.right-side {
+  max-width: 70%;
+  margin: 20px 40px 0 50px;
+}
+.nav-buttons {
+  max-width: 90%;
+  display: flex;
+  /* justify-content: space-between; */
+}
 .form-title {
   font-size: 1.1rem;
   letter-spacing: 1px;

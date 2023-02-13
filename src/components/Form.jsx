@@ -102,6 +102,16 @@ export default function Form({ step, handleNext, handleBack }) {
           <Button
             variant="contained"
             color="primary"
+            size="small"
+            sx={{
+              minWidth: "90px",
+              maxHeight: "30px",
+              fontSize: ".7rem",
+              textTransform: "capitalize",
+              fontFamily: "Ubuntu",
+              fontWeight: "300",
+              ml: "70%",
+            }}
             className="form-next"
             onClick={handleNext}
           >
