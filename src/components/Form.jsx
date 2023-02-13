@@ -133,7 +133,21 @@ export default function Form({ step, handleNext, handleBack }) {
           </Button>
         )}
         {step === 4 && (
-          <Button className="form-confirm" onClick={handleNext}>
+          <Button
+            sx={{
+              minWidth: "80px",
+              maxHeight: "30px",
+              backgroundColor: "hsl(243, 100%, 62%)",
+              color: "white",
+              fontSize: ".7rem",
+              textTransform: "capitalize",
+              fontFamily: "Ubuntu",
+              fontWeight: "300",
+              ml: "80%",
+            }}
+            className="form-confirm"
+            onClick={handleNext}
+          >
             Confirm
           </Button>
         )}

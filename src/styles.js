@@ -5,6 +5,9 @@ const theme = createTheme({
     primary: {
       main: "hsl(213, 96%, 18%)",
     },
+    seccondary: {
+      main: "hsl(243, 100%, 62%)",
+    },
   },
 });
 
