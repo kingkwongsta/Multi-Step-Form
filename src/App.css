@@ -22,13 +22,17 @@
   min-width: 450px;
 }
 .left-side {
-  width: 25%;
+  min-width: 200px;
+  max-width: 30%;
   background-color: hsl(243, 100%, 62%);
   background-image: url("./assets/bg-sidebar-desktop.svg");
   background-size: cover;
   border-radius: 10px;
 }
-
+.right-side {
+  max-width: 70%;
+  margin: 20px 40px 0 50px;
+}
 /* LEFT SIDE FORM NAVIGATION COMPONENT */
 
 .step-section {
@@ -71,10 +75,6 @@
 }
 
 /***************** RIGHT SIDE FORM*/
-.right-side {
-  max-width: 70%;
-  margin: 20px 40px 0 50px;
-}
 .nav-buttons {
   max-width: 75%;
   display: flex;
