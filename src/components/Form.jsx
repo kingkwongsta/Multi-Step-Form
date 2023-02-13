@@ -93,7 +93,21 @@ export default function Form({ step, handleNext, handleBack }) {
       <div className="nav-buttons">
         {/* Back Button after step 1 */}
         {step >= 2 && step <= 4 && (
-          <Button className="form-back" onClick={handleBack}>
+          <Button
+            sx={{
+              minWidth: "90px",
+              maxHeight: "30px",
+              fontSize: ".7rem",
+              color: "hsl(231, 11%, 63%)",
+              backgroundColor: "transparent",
+              textTransform: "capitalize",
+              fontFamily: "Ubuntu",
+              fontWeight: "300",
+            }}
+            disableFocusRipple={true}
+            className="form-back"
+            onClick={handleBack}
+          >
             Go Back
           </Button>
         )}
