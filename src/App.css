@@ -5,7 +5,7 @@
 }
 
 #root {
-  background-color: aliceblue;
+  background-color: white;
   width: 100vw;
   min-height: 100vh;
 }
@@ -19,20 +19,20 @@
 }
 .form-section {
   min-height: 350px;
+  min-width: 450px;
 }
 .left-side {
-  width: 25%;
+  min-width: 200px;
+  max-width: 30%;
   background-color: hsl(243, 100%, 62%);
   background-image: url("./assets/bg-sidebar-desktop.svg");
   background-size: cover;
   border-radius: 10px;
 }
-
 .right-side {
-  width: 70%;
+  max-width: 70%;
   margin: 20px 40px 0 50px;
 }
-
 /* LEFT SIDE FORM NAVIGATION COMPONENT */
 
 .step-section {
@@ -74,7 +74,12 @@
   font-size: 10px;
 }
 
-/* RIGHT SIDE FORM*/
+/***************** RIGHT SIDE FORM*/
+.nav-buttons {
+  max-width: 75%;
+  display: flex;
+  /* justify-content: space-between; */
+}
 .form-title {
   font-size: 1.1rem;
   letter-spacing: 1px;
@@ -102,12 +107,14 @@
 .plan-card-section {
   display: flex;
   justify-content: space-between;
+  max-width: 90%;
 }
 .plan-card {
   border: 1px solid hsl(229, 24%, 87%);
   border-radius: 5px;
-  padding: 10px 30px 10px 10px;
-  min-width: 24%;
+  padding: 10px 20px 10px 10px;
+  /* min-width: 24%; */
+  max-width: 40%;
   margin-right: 3px;
   cursor: pointer;
 }
@@ -145,7 +152,7 @@
   letter-spacing: 0.1px;
   font-weight: 500;
   color: hsl(213, 96%, 18%);
-
+  max-width: 93%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -253,4 +260,28 @@
   font-weight: 600;
   color: hsl(243, 100%, 62%);
 }
-/* quick comment test for pushing */
+/* COMPLETE PAGE */
+.thank-you-section {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+.thank-you-icon {
+  max-width: 50px;
+  margin: 90px 0 20px 0;
+}
+.thank-you-title {
+  padding-bottom: 10px;
+  font-size: 1.3rem;
+  letter-spacing: 0.3px;
+  font-weight: 600;
+  color: hsl(213, 96%, 18%);
+}
+.thank-you-desc {
+  padding: 0 30px 0 30px;
+  font-size: 0.7rem;
+  letter-spacing: 0.1px;
+  font-weight: 300;
+  color: hsl(231, 11%, 63%);
+}

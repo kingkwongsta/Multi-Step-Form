@@ -3,7 +3,10 @@ import { createTheme } from "@mui/material/styles";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#FFA500",
+      main: "hsl(213, 96%, 18%)",
+    },
+    seccondary: {
+      main: "hsl(243, 100%, 62%)",
     },
   },
 });

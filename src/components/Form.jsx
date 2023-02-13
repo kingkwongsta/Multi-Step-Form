@@ -93,7 +93,21 @@ export default function Form({ step, handleNext, handleBack }) {
       <div className="nav-buttons">
         {/* Back Button after step 1 */}
         {step >= 2 && step <= 4 && (
-          <Button className="form-back" onClick={handleBack}>
+          <Button
+            sx={{
+              minWidth: "90px",
+              maxHeight: "30px",
+              fontSize: ".7rem",
+              color: "hsl(231, 11%, 63%)",
+              backgroundColor: "transparent",
+              textTransform: "capitalize",
+              fontFamily: "Ubuntu",
+              fontWeight: "300",
+            }}
+            disableFocusRipple={true}
+            className="form-back"
+            onClick={handleBack}
+          >
             Go Back
           </Button>
         )}
@@ -102,6 +116,16 @@ export default function Form({ step, handleNext, handleBack }) {
           <Button
             variant="contained"
             color="primary"
+            size="small"
+            sx={{
+              minWidth: "90px",
+              maxHeight: "30px",
+              fontSize: ".7rem",
+              textTransform: "capitalize",
+              fontFamily: "Ubuntu",
+              fontWeight: "300",
+              ml: "70%",
+            }}
             className="form-next"
             onClick={handleNext}
           >
@@ -109,7 +133,21 @@ export default function Form({ step, handleNext, handleBack }) {
           </Button>
         )}
         {step === 4 && (
-          <Button className="form-confirm" onClick={handleNext}>
+          <Button
+            sx={{
+              minWidth: "80px",
+              maxHeight: "30px",
+              backgroundColor: "hsl(243, 100%, 62%)",
+              color: "white",
+              fontSize: ".7rem",
+              textTransform: "capitalize",
+              fontFamily: "Ubuntu",
+              fontWeight: "300",
+              ml: "80%",
+            }}
+            className="form-confirm"
+            onClick={handleNext}
+          >
             Confirm
           </Button>
         )}
