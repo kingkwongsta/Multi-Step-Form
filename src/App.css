@@ -260,4 +260,28 @@
   font-weight: 600;
   color: hsl(243, 100%, 62%);
 }
-/* quick comment test for pushing */
+/* COMPLETE PAGE */
+.thank-you-section {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+.thank-you-icon {
+  max-width: 50px;
+  margin: 90px 0 20px 0;
+}
+.thank-you-title {
+  padding-bottom: 10px;
+  font-size: 1.3rem;
+  letter-spacing: 0.3px;
+  font-weight: 600;
+  color: hsl(213, 96%, 18%);
+}
+.thank-you-desc {
+  padding: 0 30px 0 30px;
+  font-size: 0.7rem;
+  letter-spacing: 0.1px;
+  font-weight: 300;
+  color: hsl(231, 11%, 63%);
+}
